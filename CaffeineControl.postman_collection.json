@@ -1,0 +1,59 @@
+{
+	"info": {
+		"_postman_id": "bbe65450-461f-4aac-a6b7-da286a543b60",
+		"name": "CaffeineControl",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21006421"
+	},
+	"item": [
+		{
+			"name": "Coffee List",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7285/v1/coffees",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7285",
+					"path": [
+						"v1",
+						"coffees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Recommendations",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"consumption\": [\r\n        {\r\n            \"code\": \"blk\",\r\n            \"time\": 60\r\n        },\r\n        {\r\n            \"code\": \"esp\",\r\n            \"time\":120\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7285/v1/calculate",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7285",
+					"path": [
+						"v1",
+						"calculate"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
