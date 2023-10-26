@@ -1,9 +1,14 @@
-﻿using CaffeineControlAPI.Service;
+﻿using CafeineControlAPI.DTO;
 
 namespace CaffeineControlAPI.DTO
 {
     public class CoffeeModel
     {
-        public List<Coffees> Coffees { get; set; } = new List<Coffees>();
+       public List<Coffees> Coffees { get; set; }
+
+        public CoffeeModel(List<Coffees> coffees)
+        {
+            Coffees = coffees;
+        }
     }
 }

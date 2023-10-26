@@ -1,4 +1,4 @@
-﻿namespace CaffeineControlAPI.DTO
+﻿namespace CafeineControlAPI.DTO
 {
     public class Coffees
     {

@@ -9,26 +9,24 @@ namespace CaffeineControlAPI.Controller
     public class CoffeeController : ControllerBase
     {
         private readonly IConfiguration _config;
-        private readonly ILogger<Coffee> _logger;
 
-
-        public CoffeeController(IConfiguration configuration, ILogger<Coffee> logger)
+        public CoffeeController(IConfiguration configuration)
         {
             this._config = configuration;
-            this._logger = logger;
         }
 
         [HttpGet]
         [Route("coffees")]
-        public async Task<IResult> ListCoffees() 
+        public async Task<IActionResult> ListCoffees() 
         {
             try
             {
-                return Results.Ok(await CoffeeService.GetCoffees());
+                var result = await CoffeeService.GetCoffees(_config);
+                return Ok(result);
             }
             catch(Exception ex)
             {
-                return Results.BadRequest(ex.Message);
+                return BadRequest(ex.Message);
             }
         }
     }

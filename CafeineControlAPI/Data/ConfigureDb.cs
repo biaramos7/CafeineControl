@@ -38,6 +38,7 @@ namespace CaffeineControlAPI.Data
                         "('Flat White', 'wht', 63), " +
                         "('Cold Brew', 'cld', 120), " +
                         "('Decaf Coffee', 'dec', 4)", connection);
+
                     insertDataCommand.ExecuteNonQuery();
                 }
                 connection.Close();
